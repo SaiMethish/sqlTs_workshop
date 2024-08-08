@@ -1,1 +1,1 @@
-# sqlTs_workshop
+# ts_sql_workshop
