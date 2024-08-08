@@ -10,4 +10,8 @@ export class Product{
         this.category=category;
         this.description=description;
     }
+    toString():string{
+        return `name of the product:${this.title} id of the product ${this.product_id} 
+        price of the product: ${this.price} category: ${this.category} description: ${this.description}`;
+    }
 }
