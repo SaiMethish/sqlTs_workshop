@@ -9,42 +9,101 @@ const productService_1 = require("./service/productService");
 const prompt_sync_1 = __importDefault(require("prompt-sync"));
 exports.prompt = (0, prompt_sync_1.default)();
 exports.product_list = [];
-const product1 = new Product_1.Product("Asus TUF", 599, "15.6-inch Full HD display, Intel i5, 8GB RAM, 256GB SSD.", "laptops");
-product1.product_id = 1;
-exports.product_list.push(product1);
-const product2 = new Product_1.Product("HP Envy", 799, "14-inch Full HD display, Intel i7, 16GB RAM, 512GB SSD.", "laptops");
-product2.product_id = 2;
-exports.product_list.push(product2);
-const product3 = new Product_1.Product("iPhone 12", 999, "6.1-inch OLED display, A14 Bionic chip, 128GB storage.", "mobile phones");
-product3.product_id = 3;
-exports.product_list.push(product3);
-const product4 = new Product_1.Product("Galaxy S21", 699, "6.5-inch AMOLED display, Snapdragon 888, 256GB storage.", "mobile phones");
-product4.product_id = 4;
-exports.product_list.push(product4);
-const product5 = new Product_1.Product("RTX 3060", 499, "NVIDIA GeForce RTX 3060, 12GB GDDR6.", "graphics cards");
-product5.product_id = 5;
-exports.product_list.push(product5);
-const product6 = new Product_1.Product("RX 6700", 699, "AMD Radeon RX 6700 XT, 12GB GDDR6.", "graphics cards");
-product6.product_id = 6;
-exports.product_list.push(product6);
-const product7 = new Product_1.Product("Sony WH1000", 348, "Industry-leading noise canceling with Dual Noise Sensor technology.", "headphones");
-product7.product_id = 7;
-exports.product_list.push(product7);
-const product8 = new Product_1.Product("Bose 700", 379, "Wireless, noise-cancelling, with Alexa voice control.", "headphones");
-product8.product_id = 8;
-exports.product_list.push(product8);
-const product9 = new Product_1.Product("Beats Solo3", 199, "Wireless, on-ear headphones with Apple W1 chip.", "headphones");
-product9.product_id = 9;
-exports.product_list.push(product9);
-const product10 = new Product_1.Product("JBL Live", 129, "Wireless over-ear headphones with noise-cancelling.", "headphones");
-product10.product_id = 10;
-exports.product_list.push(product10);
-const product11 = new Product_1.Product("Sennheiser HD", 349, "Wireless, noise-cancelling, high-fidelity sound.", "headphones");
-product11.product_id = 11;
-exports.product_list.push(product11);
-const product12 = new Product_1.Product("AKG N700", 299, "Wireless, adaptive noise-cancelling, studio-quality sound.", "headphones");
-product12.product_id = 12;
-exports.product_list.push(product12);
+const products = [
+    {
+        name: "Asus TUF",
+        price: 599,
+        description: "15.6-inch Full HD display, Intel i5, 8GB RAM, 256GB SSD.",
+        category: "laptops",
+        product_id: 1
+    },
+    {
+        name: "HP Envy",
+        price: 799,
+        description: "14-inch Full HD display, Intel i7, 16GB RAM, 512GB SSD.",
+        category: "laptops",
+        product_id: 2
+    },
+    {
+        name: "iPhone 12",
+        price: 999,
+        description: "6.1-inch OLED display, A14 Bionic chip, 128GB storage.",
+        category: "mobile phones",
+        product_id: 3
+    },
+    {
+        name: "Galaxy S21",
+        price: 699,
+        description: "6.5-inch AMOLED display, Snapdragon 888, 256GB storage.",
+        category: "mobile phones",
+        product_id: 4
+    },
+    {
+        name: "RTX 3060",
+        price: 499,
+        description: "NVIDIA GeForce RTX 3060, 12GB GDDR6.",
+        category: "graphics cards",
+        product_id: 5
+    },
+    {
+        name: "RX 6700",
+        price: 699,
+        description: "AMD Radeon RX 6700 XT, 12GB GDDR6.",
+        category: "graphics cards",
+        product_id: 6
+    },
+    {
+        name: "Sony WH1000",
+        price: 348,
+        description: "Industry-leading noise canceling with Dual Noise Sensor technology.",
+        category: "headphones",
+        product_id: 7
+    },
+    {
+        name: "Bose 700",
+        price: 379,
+        description: "Wireless, noise-cancelling, with Alexa voice control.",
+        category: "headphones",
+        product_id: 8
+    },
+    {
+        name: "Beats Solo3",
+        price: 199,
+        description: "Wireless, on-ear headphones with Apple W1 chip.",
+        category: "headphones",
+        product_id: 9
+    },
+    {
+        name: "JBL Live",
+        price: 129,
+        description: "Wireless over-ear headphones with noise-cancelling.",
+        category: "headphones",
+        product_id: 10
+    },
+    {
+        name: "Sennheiser HD",
+        price: 349,
+        description: "Wireless, noise-cancelling, high-fidelity sound.",
+        category: "headphones",
+        product_id: 11
+    },
+    {
+        name: "AKG N700",
+        price: 299,
+        description: "Wireless, adaptive noise-cancelling, studio-quality sound.",
+        category: "headphones",
+        product_id: 12
+    }
+];
+for (let i = 0; i < products.length; i++) {
+    const name = products[i].name;
+    const price = products[i].price;
+    const description = products[i].description;
+    const category = products[i].category;
+    const product_id = products[i].product_id;
+    let product = new Product_1.Product(name, price, category, description);
+    exports.product_list.push(product);
+}
 let product_name = (0, exports.prompt)("enter product name  ");
 (0, productService_1.showproduct)(product_name);
 (0, productService_1.deleteProduct)(product_name);
