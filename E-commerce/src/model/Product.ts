@@ -4,7 +4,7 @@ export class Product{
     price:number;
     category:string;
     description:string;
-    constructor(title:string, price:number, category:string, description:string){
+    constructor(title:string, price:number, description:string,category:string){
         this.title=title;
         this.price=price;
         this.category=category;

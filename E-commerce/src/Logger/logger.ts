@@ -12,11 +12,6 @@ export const logger=createLogger({
             filename:"info.log",
             level:"info"
         }),
-        new transports.File({
-            dirname:"logs",
-            filename:"warn.log",
-            level:"warn"
-        })
     ],
     format:format.combine(
         format.timestamp(),

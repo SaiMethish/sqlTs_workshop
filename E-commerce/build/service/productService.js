@@ -13,28 +13,27 @@ const addProduct = (product) => {
     logger_1.logger.info("product added successfully");
 };
 exports.addProduct = addProduct;
-const searchProduct = (id) => {
+const searchProduct = (name) => {
     let idx = -1;
-    for (let i of __1.product_list) {
-        if (i.product_id == id) {
-            idx = id;
-            idx = id;
+    for (let i = 0; i < __1.product_list.length; i++) {
+        if (__1.product_list[i].title == name) {
+            idx = i;
         }
     }
     return idx;
 };
 exports.searchProduct = searchProduct;
-const showproduct = (id) => {
-    let idx = (0, exports.searchProduct)(id);
+const showproduct = (name) => {
+    let idx = (0, exports.searchProduct)(name);
     if (idx == -1)
         logger_1.logger.error("product not found");
     else {
-        console.log(__1.product_list[idx].toString());
+        console.log(__1.product_list[idx]);
     }
 };
 exports.showproduct = showproduct;
-const deleteProduct = (id) => {
-    let idx = (0, exports.searchProduct)(id);
+const deleteProduct = (name) => {
+    let idx = (0, exports.searchProduct)(name);
     if (idx == -1)
         logger_1.logger.error("product not found");
     else {

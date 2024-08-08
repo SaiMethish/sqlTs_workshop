@@ -12,26 +12,25 @@ export const addProduct=(product:Product)=>{
     logger.info("product added successfully");
 }
 
-export const searchProduct=(id:number):number=>{
+export const searchProduct=(name:String):number=>{
     let idx:number=-1;
-    for(let i of product_list){
-        if(i.product_id==id){
-            idx=id;
-            idx=id;
+    for(let i=0;i<product_list.length;i++){
+        if(product_list[i].title==name){
+            idx=i;
         }
     }
     return idx;
 }
-export const showproduct=(id:number)=>{
-    let idx=searchProduct(id);
+export const showproduct=(name:string)=>{
+    let idx=searchProduct(name);
     if(idx==-1) logger.error("product not found"); 
     else{
-        console.log(product_list[idx].toString());
+        console.log(product_list[idx]);
     }   
 
 }
-export const deleteProduct=(id:number)=>{
-    let idx=searchProduct(id);
+export const deleteProduct=(name:string)=>{
+    let idx=searchProduct(name);
     if(idx==-1) logger.error("product not found");
     else{
         product_list.splice(idx,1);

@@ -14,11 +14,6 @@ exports.logger = (0, winston_1.createLogger)({
             filename: "info.log",
             level: "info"
         }),
-        new winston_1.transports.File({
-            dirname: "logs",
-            filename: "warn.log",
-            level: "warn"
-        })
     ],
     format: winston_1.format.combine(winston_1.format.timestamp(), winston_1.format.printf(({ timestamp, level, message }) => {
         return `created at [${timestamp}] level: ${level}  message: ${message}`;
