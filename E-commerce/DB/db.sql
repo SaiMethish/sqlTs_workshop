@@ -54,4 +54,4 @@ end; $$
 language plpgsql;
 
 
-select * from getOrdersByRange('01-08-2024','06-08-2024');
+select * from getOrdersByRange('01-08-2024','05-11-2024');
